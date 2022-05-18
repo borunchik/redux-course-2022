@@ -28,6 +28,23 @@ body.dark .card {
 
 
 
+
+
+.wordsList_type_full li span{}
+
+.wordsList__number{
+  display: inline-block;
+  width: 30px;
+}
+
+.wordsList__word{
+  display: inline-block;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
 .wordsList_type_plain ul{
   list-style-type: none;
   padding: 0px;

@@ -48,10 +48,10 @@
       <ul name="listContainer">
 
       </ul>
-      <template name="itemTemplate">
+      <template name="itemTemplate" class="wordsList_type_full">
         <li>
-          <span htmlValue="item.index"></span>
-          <span htmlValue="item.word"></span>
+          <span htmlValue="item.index" class="wordsList__number"></span>
+          <span htmlValue="item.word" class="wordsList__word"></span>
           <a href="#about" htmlAction='{"type": "words/delete", "payload": {"index": $_{item.index}}}'>delete</a>
           <a href="#about" htmlAction='{"type": "words/clone", "payload": {"index": $_{item.index}}}'>Clone</a>
         </li>
