@@ -21,3 +21,26 @@ body.dark .card {
   align-items: center;
   justify-content: space-between;
 }
+
+
+
+
+
+
+
+.wordsList_type_plain ul{
+  list-style-type: none;
+  padding: 0px;
+}
+
+.wordsList_type_plain li{
+  display: inline;
+}
+
+.wordsList_type_plain li::after{
+  content: ",";
+}
+
+.wordsList_type_plain li:last-child::after{
+  content: "";
+}

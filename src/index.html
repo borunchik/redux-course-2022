@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Redux</title>
+
+
+
 </head>
 <body>
 
@@ -27,6 +30,47 @@
       <button class="btn btn-success" id="async">Async</button>
     </div>
   </div>
+
+  <hr>
+
+
+  <article class="words">
+    <words-editor class="wordsEditor">
+      <h1>Modify words here:</h1>
+      <input type="text" name="addWordInput" class="wordsEditor__addInput"/>
+      <button name="addWordButton" class="wordsEditor__addButton">Add word</button>
+    </words-editor>
+
+    <hr/>
+
+    <items-list id="wordsList1" stateValue="item.words">
+      <h1>Words list here:</h1>
+      <ul name="listContainer">
+
+      </ul>
+      <template name="itemTemplate">
+        <li>
+          <span htmlValue="item.index"></span>
+          <span htmlValue="item.word"></span>
+          <a href="#about" htmlAction='{"type": "words/delete", "payload": {"index": $_{item.index}}}'>delete</a>
+          <a href="#about" htmlAction='{"type": "words/clone", "payload": {"index": $_{item.index}}}'>Clone</a>
+        </li>
+      </template>
+    </items-list>
+
+    <hr/>
+
+    <items-list id="wordsList2" stateValue="item.words" class="wordsList_type_plain">
+      <h1>Words list (comma separated) here:</h1>
+      <ul name="listContainer">
+
+      </ul>
+      <template name="itemTemplate">
+        <li htmlValue="item.word"></li>
+      </template>
+    </items-list>
+
+  </article>
 </div>
 </body>
 </html>

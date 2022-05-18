@@ -6,6 +6,35 @@ import {rootReducer} from './redux/rootReducer'
 import {asyncIncrement, changeTheme, decrement, increment} from './redux/actions'
 import './styles.css'
 
+
+import {globalStore} from "./components/store.js"
+
+/* custom components */
+import {WordsEditor} from "./components/wordsEditor.js";
+window.customElements.define("words-editor", WordsEditor);
+
+import {ItemsList} from "./components/itemsList.js";
+window.customElements.define("items-list", ItemsList);
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const wordsEditor = document.querySelector("words-editor");
+  wordsEditor.store = globalStore;
+
+
+  const wordsList = document.querySelector("items-list#wordsList1");
+  wordsList.store = globalStore;
+
+  const wordsList2 = document.querySelector("items-list#wordsList2");
+  wordsList2.store = globalStore;
+
+});
+
+
+
+
+
 const counter = document.getElementById('counter')
 const addBtn = document.getElementById('add')
 const subBtn = document.getElementById('sub')
